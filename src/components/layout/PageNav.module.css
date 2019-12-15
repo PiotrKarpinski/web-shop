@@ -1,0 +1,13 @@
+.component {
+	position: static;
+	padding: 2px 12px;
+	bottom: 0;
+	background-color: black;
+}
+
+.logo {
+float: left;
+color: #fff;
+margin: 8px 0;
+margin-right: 12px;
+}
