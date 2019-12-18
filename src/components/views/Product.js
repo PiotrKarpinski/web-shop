@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Product.module.css';
-import Option from './Option.js'
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux'
@@ -41,8 +40,8 @@ class Product extends React.Component {
     function handleSubmit() {
         if (Object.keys(orderDisplayParams).length > 1) {
         console.log(name,orderDisplayParams, price, id)
-        let order = {id, name, orderDisplayParams, price, orderIdParams, image}
-        addToCard(order);
+        let product = {id, name, orderDisplayParams, price, orderIdParams, image}
+        addToCard(product);
 
     } else {
         alert('You have to choose color and capacity')}
@@ -86,9 +85,9 @@ class Product extends React.Component {
 }
 
 
-const mapDispatchToProps = (dispatch,order) => ({
-    addToCard: order => dispatch(createAction_addToCard({
-        order
+const mapDispatchToProps = (dispatch,product) => ({
+    addToCard: product => dispatch(createAction_addToCard({
+        ...product
     })),
 })
 

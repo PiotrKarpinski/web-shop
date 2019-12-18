@@ -1,8 +1,37 @@
 .component {
-	transition: all 1s;
-	width: 30vw;
+	background-color: #D2DAD8;
+	margin: 24px auto;
+	width: 80vw;
+
+}
+
+.list {
+	padding: 12px;
+	margin: auto;
+	width: 60%;
+
+}
+
+.product{
+	border: solid 1px gray;
+	border-radius: 5px;
+	display: block;
+	padding: 12px;
+	margin: 48px auto;
 	background-color: #fff;
-	height: 300px;
-	display: inline;
-	float: right;
+	text-align: center;
+}
+
+.price {
+	text-align: center;
+	font-size: 24px;
+}
+
+.image {
+	margin: 12px auto;
+	border-radius: 5px;
+	background-position: center;
+	background-size: cover;
+	width: 80%;
+	min-height: 20px;
 }

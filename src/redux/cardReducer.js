@@ -7,12 +7,14 @@ export const ADD_TO_CARD = createActionName('ADD_TO_CARD');
 
 export const createAction_addToCard = payload => ({ payload , type: ADD_TO_CARD});
    
+let order = []
 
 export default function reducer (state=[], action={}) {
     console.log(state)
     switch (action.type) {
         case ADD_TO_CARD:
-          return action.payload
+        order.push(action.payload)
+          return order
         default:
           return state;
     }

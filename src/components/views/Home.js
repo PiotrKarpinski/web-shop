@@ -1,7 +1,6 @@
 import React from 'react';
 import Product from './Product';
 import styles from './Home.module.css';
-import axios from "axios";
 import { connect } from 'react-redux';
 
 class Home extends React.Component {
