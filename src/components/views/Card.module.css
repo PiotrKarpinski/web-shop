@@ -1,0 +1,8 @@
+.component {
+	transition: all 1s;
+	width: 30vw;
+	background-color: #fff;
+	height: 300px;
+	display: inline;
+	float: right;
+}
