@@ -4,11 +4,16 @@
 	width: 80vw;
 }
 
-.links {
+
+.icons i {
+	font-size: 16px;
 }
 
+@media (max-width: 400px) {
 
-.icons {
-	float: right;
+  .icons i {
+
+  	font-size: 12px
+  }
+
 }
-

@@ -11,3 +11,11 @@
 	width: 60%;
 
 }
+
+@media (max-width: 400px) {
+  .component{
+  	margin: 12px auto;
+  	width: 100vw;
+  }
+
+}

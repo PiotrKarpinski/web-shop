@@ -1,6 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from '../App';
 import cardReducer from './cardReducer';
 import {combineReducers, createStore } from 'redux';
 import Products from './../data/products.json'
@@ -13,7 +10,6 @@ const initialState = {
 }
 
 const reducers = {
-
 	card: cardReducer,
 };
 

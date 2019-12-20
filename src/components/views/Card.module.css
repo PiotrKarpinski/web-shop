@@ -2,25 +2,41 @@
 	background-color: #D2DAD8;
 	margin: 24px auto;
 	width: 80vw;
+}
 
+.emptyCard {
+	background-color: #fff;
+	margin: 24px auto;
+	width: 80vw;
+	height: 50vh;
+}	
+
+
+.title {
+	text-align: center;
+	padding: 12px;
+	margin: auto;
 }
 
 .list {
-	padding: 12px;
-	margin: auto;
-	width: 60%;
 
 }
+
+
 
 .product{
-	border: solid 1px gray;
-	border-radius: 5px;
-	display: block;
-	padding: 12px;
-	margin: 48px auto;
 	background-color: #fff;
-	text-align: center;
+	border: solid 1px #fff;
+	border-radius: 5px;
+	padding: 12px;
+	margin: 12px;
 }
+.product li{
+	text-align: center;
+	margin: 4px;	
+	list-style-type: none;
+}
+
 
 .price {
 	text-align: center;
@@ -28,10 +44,46 @@
 }
 
 .image {
-	margin: 12px auto;
+	margin: auto;
 	border-radius: 5px;
+	background-size: contain;
+	background-repeat: no-repeat;
 	background-position: center;
-	background-size: cover;
-	width: 80%;
-	min-height: 20px;
+	height: 100%;
 }
+
+.form {
+	background-color: #fff;
+	margin: 12px;
+
+}
+
+.text {
+	width: 80%;
+	display: block;
+	font-size: 18px;
+	margin: 12px 4px;
+}
+
+.warning {
+	font-size: 12px;
+	color: red;
+}
+
+.submit {
+	padding: 12px 24px;
+	margin: auto;
+	text-align: center;
+}
+
+@media (max-width: 500px) {
+  .info li {
+    font-size: 8px;
+  }
+  .text {
+  	margin: 12px auto;
+  	text-align: center;
+  }
+
+}
+

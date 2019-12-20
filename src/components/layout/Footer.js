@@ -9,11 +9,6 @@ import Icon from '../common/Icon';
 function Footer() {
   return (
     <footer className={styles.component}>
-    	<ButtonGroup className={styles.links} variant="text" size="small" aria-label="small contained button group">
-              <Button>Terms and conditions</Button>
-              <Button>Recruitment</Button>
-              <Button>Contact</Button>
-            </ButtonGroup>
         <div className={styles.icons}>
         <IconButton>
         <Icon icon='fab fa-facebook'/>

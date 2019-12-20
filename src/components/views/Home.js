@@ -12,7 +12,6 @@ class Home extends React.Component {
 
 	{  
 
-console.log(this.props.products)
 
     return (
       <section className={styles.component}>

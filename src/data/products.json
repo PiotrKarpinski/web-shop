@@ -4,7 +4,7 @@
 	{
 		"id": 1,
 		"name": "iPhone 8",
-		"imageUrl": "./media/iphone_1.jpg",
+		"imageUrl": "./media/iphone_2.jpg",
 		"price": 99.99,
 		"oldPrice": 599.00,
 		"options": [
@@ -50,7 +50,7 @@
 	{
 		"id": 2,
 		"name": "iPhone 8 Plus",
-		"imageUrl": "./media/iphone_2.jpg",
+		"imageUrl": "./media/iphone_3.png",
 		"price": 129.99,
 		"oldPrice": 699.00,
 		"options": [
@@ -101,7 +101,7 @@
 	{
 		"id": 3,
 		"name": "iPhone 7",
-		"imageUrl": "./media/iphone_3.jpg",
+		"imageUrl": "./media/iphone_1.jpg",
 		"price": 79.99,
 		"oldPrice": 399.00,
 		"options": [

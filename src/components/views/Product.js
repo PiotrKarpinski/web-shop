@@ -5,51 +5,53 @@ import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux'
 import { createAction_addToCard } from '../../redux/cardReducer'
 
+        let orderDisplayParams = {}
+        let orderIdParams = []
+        let fixedPriceObject = {Color:0, Capacity:0}
+
 
 class Product extends React.Component {
+    constructor(props) {
+    super(props);
+    this.state = {fixedPrice: this.props.price}
+    this.handleChange = this.handleChange.bind(this)
 
-    render() {
+    }
 
-        
-        console.log(this.props)
-        
+     handleChange(option) {
 
-
-        let orderDisplayParams = {}
-        let orderIdParams = {}
-        function handleChange(option) {
 
         const priceModifier = option.getAttribute('data-price');
-        const optionId = option.getAttribute('data-option');
-        const valueId = option.getAttribute('data-value');
-        console.log(option)
+        const optionId = option.getAttribute('data-option-id');
+        const valueId = option.getAttribute('data-value-id');
+        const optionName = option.getAttribute('data-name');
+       
+        fixedPriceObject = {...fixedPriceObject, [optionName] : priceModifier}
+        this.setState({fixedPrice: this.props.price + parseInt(fixedPriceObject.Color) + parseInt(fixedPriceObject.Capacity)})
 
-        orderDisplayParams = {
-            ...orderDisplayParams, [option.name] : option.value
-           
-            }
-        orderIdParams = {...orderIdParams, [optionId] : valueId }
+        orderDisplayParams = {...orderDisplayParams, [optionName] : option.value}
+        
+        orderIdParams = {...orderIdParams,[optionId]:valueId}
 
 
-
-        totalPrice = totalPrice+ parseInt(priceModifier);
-        console.log(totalPrice)
     }
+
+    render() {
+        
 
 
     function handleSubmit() {
-        if (Object.keys(orderDisplayParams).length > 1) {
-        console.log(name,orderDisplayParams, price, id)
-        let product = {id, name, orderDisplayParams, price, orderIdParams, image}
+        if (Object.keys(orderIdParams).length > 1) {
+        let product = {id, name, orderDisplayParams,fixedPrice, orderIdParams, image}
         addToCard(product);
-
     } else {
         alert('You have to choose color and capacity')}
     } 
 
+        
+       
     const {addToCard,name,image,price,oldPrice, options, id} = this.props
-    let totalPrice=price;
-
+    const {fixedPrice} = this.state;
   return (
     <div className={styles.product}>
         
@@ -67,14 +69,14 @@ class Product extends React.Component {
 
         <h5>{o.name}:</h5>
         <ul>
-            {o.values.map(v => <li key={v.id} id={v.id} ><input onChange={e => handleChange(e.target)} data-price={v.priceModifier} type="radio" data-option={o.id} data-value={v.id} name={name+'_'+o.name} value={v.name}/>{v.name}</li>)}
+            {o.values.map(v => <li key={v.id} id={v.id} ><input onChange={e => this.handleChange(e.target)} data-price={v.priceModifier} type="radio" data-option-id={o.id} data-value-id={v.id} data-name={o.name} name={name+'_'+o.name} value={v.name}/>{v.name}</li>)}
          </ul>
         </div>)}
     	 
          </Grid>
          <br/>
          </Grid>
-         <h4>Total cost: {totalPrice}$</h4>        
+         <h4>Total cost: {this.state.fixedPrice}$</h4>
          <Button variant='contained' color='secondary' className={styles.submit} onClick={e => handleSubmit()} type='submit'>Add to cart!</Button>
 
     </div>
