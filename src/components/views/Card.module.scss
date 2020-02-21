@@ -1,0 +1,126 @@
+@import '../../data/settings.scss';
+
+
+.component {
+	background-color: $color-one;
+	margin: 24px auto;
+	width: 80vw;
+}
+
+.emptyCard {
+	background-color: $color-one;
+	margin: 24px auto;
+	width: 80vw;
+	height: 50vh;
+}	
+
+.title {
+	font-size: 48px;
+	font-family: $font-header;
+	text-align: center;
+	padding: 12px;
+	margin: auto;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.list {
+	justify-content: space-around;
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+}
+
+.product {
+	text-align: left;
+	min-width: 25vw;
+	font-family: $font-text;
+	border-radius: 12px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 24px;
+	background-color: #fff;
+	text-align: center;
+	-webkit-box-shadow: -1px 3px 62px -2px rgba(99,74,52,0.7);
+	-moz-box-shadow: -1px 3px 62px -2px rgba(99,74,52,0.7);
+	box-shadow: -1px 3px 62px -2px rgba(99,74,52,0.7);
+	transition: $transition;
+
+
+	h5 {
+	margin: 12px 24px;
+	text-align: center;
+	font-size: 24px;
+	}
+}
+
+.product:hover {
+	transform: scale(1.05);
+}
+
+
+.image {
+	margin: 12px auto;
+	border-radius: 5px;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	min-height: 200px;
+}
+
+.totalPrice {
+	width: 100%;
+	display: block;
+	font-size: 46px;
+}
+
+
+.form {
+	width: 100%;
+	background-color: #fff;
+	margin: 12px;
+
+
+	p{
+	font-family: $font-header;
+	font-size: 24px;
+	font-weight: bold;
+	}
+}
+
+.text {
+	font-family: $font-header;
+	padding: 4px;
+	border: 0.5px solid black;
+	border-radius: 5px;
+	width: 50%;
+	display: block;
+	font-size: 18px;
+	margin: 12px 4px;
+}
+
+.warning {
+	font-size: 12px;
+	color: red;
+}
+
+.submit {
+	padding: 12px 24px;
+	margin: auto;
+	text-align: center;
+}
+
+@media (max-width: 800px) {
+
+
+  .info li {
+    font-size: 8px;
+  }
+
+
+}
+

@@ -3,45 +3,40 @@
 	[
 	{
 		"id": 1,
-		"name": "iPhone 8",
-		"imageUrl": "./media/iphone_2.jpg",
-		"price": 99.99,
-		"oldPrice": 599.00,
+		"name": "Avocado Chicken",
+		"imageUrl": "./media/avocado.jpg",
+		"price": 9.99,
+		"oldPrice": 19.00,
 		"options": [
 			{
 				"id": 100,
-				"name": "Color",
+				"name": "Extra",
 				"values": [
 					{
 						"id": 1000,
-						"name": "Silver",
-						"priceModifier": 0
+						"name": "Bread",
+						"priceModifier": 2.00
 					},
 					{
 						"id": 1001,
-						"name": "Space Gray",
-						"priceModifier": 0
-					},
-					{
-						"id": 1002,
-						"name": "Gold",
-						"priceModifier": 0
+						"name": "Fries",
+						"priceModifier": 2.00
 					}
 				]
 			},
 			{
 				"id": 101,
-				"name": "Capacity",
+				"name": "Drink",
 				"values": [
 					{
 						"id": 1100,
-						"name": "64 GB",
-						"priceModifier": 0
+						"name": "Soda",
+						"priceModifier": 1.00
 					},
 					{
 						"id": 1101,
-						"name": "256 GB",
-						"priceModifier": 40.00
+						"name": "Wine",
+						"priceModifier": 10.00
 					}
 				]
 			}
@@ -49,91 +44,368 @@
 	},
 	{
 		"id": 2,
-		"name": "iPhone 8 Plus",
-		"imageUrl": "./media/iphone_3.png",
-		"price": 129.99,
-		"oldPrice": 699.00,
+		"name": "Beef Steak",
+		"imageUrl": "./media/beef.jpg",
+		"price": 9.99,
+		"oldPrice": 19.00,
 		"options": [
 			{
 				"id": 100,
-				"name": "Color",
+				"name": "Extra",
 				"values": [
 					{
 						"id": 1000,
-						"name": "Silver",
-						"priceModifier": 0
+						"name": "Bread",
+						"priceModifier": 2.00
 					},
 					{
 						"id": 1001,
-						"name": "Space Gray",
-						"priceModifier": 0
-					},
-					{
-						"id": 1002,
-						"name": "Gold",
-						"priceModifier": 0
-					},
-					{
-						"id": 1003,
-						"name": "Red",
-						"priceModifier": 10.00
+						"name": "Fries",
+						"priceModifier": 2.00
 					}
 				]
 			},
 			{
 				"id": 101,
-				"name": "Capacity",
+				"name": "Drink",
 				"values": [
 					{
 						"id": 1100,
-						"name": "64 GB",
-						"priceModifier": 0
+						"name": "Soda",
+						"priceModifier": 1.00
 					},
 					{
 						"id": 1101,
-						"name": "256 GB",
-						"priceModifier": 40.00
+						"name": "Wine",
+						"priceModifier": 10.00
+					}
+				]
+			}
+		]
+	},	
+	{
+		"id": 3,
+		"name": "Chocolate Cake",
+		"imageUrl": "./media/chocolate.jpg",
+		"price": 4.99,
+		"oldPrice": 9.00,
+		"options": [
+			{
+				"id": 100,
+				"name": "Extra",
+				"values": [
+					{
+						"id": 1000,
+						"name": "Chocolate",
+						"priceModifier": 2.00
+					},
+					{
+						"id": 1001,
+						"name": "Ice cream",
+						"priceModifier": 2.00
+					}
+				]
+			},
+			{
+				"id": 101,
+				"name": "Drink",
+				"values": [
+					{
+						"id": 1100,
+						"name": "Soda",
+						"priceModifier": 1.00
+					},
+					{
+						"id": 1101,
+						"name": "Wine",
+						"priceModifier": 10.00
 					}
 				]
 			}
 		]
 	},
 	{
-		"id": 3,
-		"name": "iPhone 7",
-		"imageUrl": "./media/iphone_1.jpg",
-		"price": 79.99,
-		"oldPrice": 399.00,
+		"id": 4,
+		"name": "Some Mysterious Dish",
+		"imageUrl": "./media/food.jpg",
+		"price": 19.99,
+		"oldPrice": 29.00,
 		"options": [
 			{
 				"id": 100,
-				"name": "Color",
+				"name": "Extra",
 				"values": [
 					{
 						"id": 1000,
-						"name": "Silver",
-						"priceModifier": 0
+						"name": "Bread",
+						"priceModifier": 2.00
 					},
 					{
 						"id": 1001,
-						"name": "Space Gray",
-						"priceModifier": 0
+						"name": "Fries",
+						"priceModifier": 2.00
 					}
 				]
 			},
 			{
 				"id": 101,
-				"name": "Capacity",
+				"name": "Drink",
 				"values": [
 					{
 						"id": 1100,
-						"name": "64 GB",
-						"priceModifier": 0
+						"name": "Soda",
+						"priceModifier": 1.00
 					},
 					{
 						"id": 1101,
-						"name": "256 GB",
-						"priceModifier": 40.00
+						"name": "Wine",
+						"priceModifier": 10.00
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 5,
+		"name": "Fruit Salad",
+		"imageUrl": "./media/fruit.jpg",
+		"price": 4.99,
+		"oldPrice": 9.00,
+		"options": [
+			{
+				"id": 100,
+				"name": "Extra",
+				"values": [
+					{
+						"id": 1000,
+						"name": "Fruits",
+						"priceModifier": 2.00
+					},
+					{
+						"id": 1001,
+						"name": "Waffle",
+						"priceModifier": 2.00
+					}
+				]
+			},
+			{
+				"id": 101,
+				"name": "Drink",
+				"values": [
+					{
+						"id": 1100,
+						"name": "Soda",
+						"priceModifier": 1.00
+					},
+					{
+						"id": 1101,
+						"name": "Wine",
+						"priceModifier": 10.00
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 6,
+		"name": "Hamburger Classic",
+		"imageUrl": "./media/hamburger.jpg",
+		"price": 4.99,
+		"oldPrice": 9.00,
+		"options": [
+			{
+				"id": 100,
+				"name": "Extra",
+				"values": [
+					{
+						"id": 1000,
+						"name": "Bread",
+						"priceModifier": 2.00
+					},
+					{
+						"id": 1001,
+						"name": "Fries",
+						"priceModifier": 2.00
+					}
+				]
+			},
+			{
+				"id": 101,
+				"name": "Drink",
+				"values": [
+					{
+						"id": 1100,
+						"name": "Soda",
+						"priceModifier": 1.00
+					},
+					{
+						"id": 1101,
+						"name": "Cola",
+						"priceModifier": 10.00
+					}
+				]
+			}
+		]
+	},	
+	{
+		"id": 7,
+		"name": "Pasta with something",
+		"imageUrl": "./media/pasta.jpg",
+		"price": 9.99,
+		"oldPrice": 19.00,
+		"options": [
+			{
+				"id": 100,
+				"name": "Extra",
+				"values": [
+					{
+						"id": 1000,
+						"name": "Bread",
+						"priceModifier": 2.00
+					},
+					{
+						"id": 1001,
+						"name": "Fries",
+						"priceModifier": 2.00
+					}
+				]
+			},
+			{
+				"id": 101,
+				"name": "Drink",
+				"values": [
+					{
+						"id": 1100,
+						"name": "Soda",
+						"priceModifier": 1.00
+					},
+					{
+						"id": 1101,
+						"name": "Wine",
+						"priceModifier": 10.00
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 8,
+		"name": "Super Healthy Spinach Chicken",
+		"imageUrl": "./media/spinach.jpg",
+		"price": 9.99,
+		"oldPrice": 19.00,
+		"options": [
+			{
+				"id": 100,
+				"name": "Extra",
+				"values": [
+					{
+						"id": 1000,
+						"name": "Bread",
+						"priceModifier": 2.00
+					},
+					{
+						"id": 1001,
+						"name": "Fries",
+						"priceModifier": 2.00
+					}
+				]
+			},
+			{
+				"id": 101,
+				"name": "Drink",
+				"values": [
+					{
+						"id": 1100,
+						"name": "Soda",
+						"priceModifier": 1.00
+					},
+					{
+						"id": 1101,
+						"name": "Cabbage Juice",
+						"priceModifier": 10.00
+					}
+				]
+			}
+		]
+	},	
+	{
+		"id": 9,
+		"name": "Steak with Vegetables",
+		"imageUrl": "./media/steak.jpg",
+		"price": 14.99,
+		"oldPrice": 19.00,
+		"options": [
+			{
+				"id": 100,
+				"name": "Extra",
+				"values": [
+					{
+						"id": 1000,
+						"name": "Bread",
+						"priceModifier": 2.00
+					},
+					{
+						"id": 1001,
+						"name": "Fries",
+						"priceModifier": 2.00
+					}
+				]
+			},
+			{
+				"id": 101,
+				"name": "Drink",
+				"values": [
+					{
+						"id": 1100,
+						"name": "Soda",
+						"priceModifier": 1.00
+					},
+					{
+						"id": 1101,
+						"name": "Wine",
+						"priceModifier": 10.00
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 10,
+		"name": "Spicy Vegetables",
+		"imageUrl": "./media/vegetable.jpg",
+		"price": 12.99,
+		"oldPrice": 19.00,
+		"options": [
+			{
+				"id": 100,
+				"name": "Extra",
+				"values": [
+					{
+						"id": 1000,
+						"name": "Bread",
+						"priceModifier": 2.00
+					},
+					{
+						"id": 1001,
+						"name": "Fries",
+						"priceModifier": 2.00
+					}
+				]
+			},
+			{
+				"id": 101,
+				"name": "Drink",
+				"values": [
+					{
+						"id": 1100,
+						"name": "Soda",
+						"priceModifier": 1.00
+					},
+					{
+						"id": 1101,
+						"name": "Wine",
+						"priceModifier": 10.00
 					}
 				]
 			}

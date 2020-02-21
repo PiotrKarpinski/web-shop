@@ -1,0 +1,24 @@
+@import '../../data/settings.scss';
+
+
+.component {
+	background-color: $color-one;
+	margin: auto;
+
+}
+
+.list {
+	justify-content: space-around;
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+
+}
+
+@media (max-width: 400px) {
+  .component{
+  	margin: 12px auto;
+  	width: 100vw;
+  }
+
+}

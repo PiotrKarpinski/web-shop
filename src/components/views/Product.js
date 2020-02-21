@@ -1,39 +1,49 @@
 import React from 'react';
-import styles from './Product.module.css';
+import styles from './Product.module.scss';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux'
 import { createAction_addToCard } from '../../redux/cardReducer'
 
-        let orderDisplayParams = {}
-        let orderIdParams = []
-        let fixedPriceObject = {Color:0, Capacity:0}
 
+
+let orderParams={}
+let fixedPrice
 
 class Product extends React.Component {
     constructor(props) {
     super(props);
     this.state = {fixedPrice: this.props.price}
     this.handleChange = this.handleChange.bind(this)
+    this.totalIt = this.totalIt.bind(this)
 
     }
 
+    totalIt() {
+  var id = this.props.id    
+  var input = document.getElementsByName("product_"+id+"_option");
+  var total = this.props.price;
+  for (var i = 0; i < input.length; i++) {
+    if (input[i].checked) {
+
+    console.log(id)
+
+      total += parseFloat(input[i].value);
+    }
+  }
+  document.getElementById(id).innerHTML = "Total cost: $" + total.toFixed(2);
+
+  this.setState({fixedPrice: total.toFixed(2)})
+  return total.toFixed(2)
+
+}
+
      handleChange(option) {
-
-
-        const priceModifier = option.getAttribute('data-price');
-        const optionId = option.getAttribute('data-option-id');
-        const valueId = option.getAttribute('data-value-id');
-        const optionName = option.getAttribute('data-name');
-       
-        fixedPriceObject = {...fixedPriceObject, [optionName] : priceModifier}
-        this.setState({fixedPrice: this.props.price + parseInt(fixedPriceObject.Color) + parseInt(fixedPriceObject.Capacity)})
-
-        orderDisplayParams = {...orderDisplayParams, [optionName] : option.value}
-        
-        orderIdParams = {...orderIdParams,[optionId]:valueId}
-
-
+        const optionName = option.getAttribute('data-option'); 
+        const optionValue = option.getAttribute('data-value'); 
+          
+        orderParams ={...orderParams,[optionValue]:true}  
+        fixedPrice = this.totalIt()
     }
 
     render() {
@@ -41,11 +51,8 @@ class Product extends React.Component {
 
 
     function handleSubmit() {
-        if (Object.keys(orderIdParams).length > 1) {
-        let product = {id, name, orderDisplayParams,fixedPrice, orderIdParams, image}
-        addToCard(product);
-    } else {
-        alert('You have to choose color and capacity')}
+      let product = {id, name, image, fixedPrice, orderParams}
+      addToCard(product);
     } 
 
         
@@ -60,25 +67,24 @@ class Product extends React.Component {
     	<br />
     	<span className={styles.price} style={{color: 'green'}}>{price}$</span>
     	<br />
-        <Grid container spacing={2}>
-          <Grid item md={8} xs={12}>
         <div className={styles.image} style={{ backgroundImage: `url(${image}` }}/>
-          </Grid>
-          <Grid  className={styles.options} item md={4} xs={12}>
+          <div className={styles.options}>
     	 {options.map(o => <div key={o.id} id={o.id} className={styles.component}>
 
         <h5>{o.name}:</h5>
-        <ul>
-            {o.values.map(v => <li key={v.id} id={v.id} ><input onChange={e => this.handleChange(e.target)} data-price={v.priceModifier} type="radio" data-option-id={o.id} data-value-id={v.id} data-name={o.name} name={name+'_'+o.name} value={v.name}/>{v.name}</li>)}
-         </ul>
+            {o.values.map(v => <label key={v.id} id={v.id}  className={styles.value}>{v.name}
+                               <input type="checkbox" onChange={e => this.handleChange(e.target)} data-option={o.name} data-value={v.name} name={'product_'+this.props.id+'_option'} value={v.priceModifier}/>
+                               <span className={styles.checkmark}></span>
+                               </label>
+                               )}
         </div>)}
     	 
-         </Grid>
          <br/>
-         </Grid>
-         <h4>Total cost: {this.state.fixedPrice}$</h4>
-         <Button variant='contained' color='secondary' className={styles.submit} onClick={e => handleSubmit()} type='submit'>Add to cart!</Button>
 
+         <h4 id={this.props.id} className={styles.price}>Total cost: ${this.state.fixedPrice}</h4>
+         <Button variant='contained' color='secondary' style={{padding: 24+'px'}} className={styles.submit} onClick={e => handleSubmit()} type='submit'>Add to cart!</Button>
+
+    </div>
     </div>
 
 

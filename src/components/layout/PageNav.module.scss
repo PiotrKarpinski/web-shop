@@ -1,4 +1,15 @@
+@import '../../data/settings.scss';
+
 .component {
-	bottom: 0;
-	
+	background-color: rgba(255,255,255,0.3);
+	z-index: 9999;
+	width: 100%;
+	position: fixed;
+	-webkit-box-shadow: -1px 30px 94px 22px rgba(99,74,52,0.46);
+-moz-box-shadow: -1px 30px 94px 22px rgba(99,74,52,0.46);
+box-shadow: -1px 30px 94px 22px rgba(99,74,52,0.46);
+}
+
+.icon {
+	font-size: 36px;
 }
