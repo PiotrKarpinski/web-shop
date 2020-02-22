@@ -7,6 +7,12 @@
 
 }
 
+.title {
+	margin: 48px auto;
+	font-family: $font-text;
+	text-align: center;
+}
+
 .list {
 	justify-content: space-around;
 	display: flex;

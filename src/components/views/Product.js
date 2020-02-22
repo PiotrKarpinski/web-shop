@@ -1,10 +1,8 @@
 import React from 'react';
 import styles from './Product.module.scss';
-import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux'
 import { createAction_addToCard } from '../../redux/cardReducer'
-
 
 
 let orderParams={}
@@ -13,9 +11,10 @@ let fixedPrice
 class Product extends React.Component {
     constructor(props) {
     super(props);
-    this.state = {fixedPrice: this.props.price}
+    this.state = {fixedPrice: this.props.price,orderParams: ''}
     this.handleChange = this.handleChange.bind(this)
     this.totalIt = this.totalIt.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
 
     }
 
@@ -26,7 +25,6 @@ class Product extends React.Component {
   for (var i = 0; i < input.length; i++) {
     if (input[i].checked) {
 
-    console.log(id)
 
       total += parseFloat(input[i].value);
     }
@@ -38,27 +36,35 @@ class Product extends React.Component {
 
 }
 
+
      handleChange(option) {
-        const optionName = option.getAttribute('data-option'); 
+
         const optionValue = option.getAttribute('data-value'); 
-          
-        orderParams ={...orderParams,[optionValue]:true}  
+
+        this.setState({orderParams: {...this.state.orderParams,[optionValue]:true}})
+
         fixedPrice = this.totalIt()
+
     }
+
+    handleSubmit() {
+      const {addToCard,name,image, id} = this.props
+      fixedPrice = this.totalIt()
+
+      orderParams = this.state.orderParams;
+      let product = {id, name, image, fixedPrice, orderParams}
+      addToCard(product);
+    } 
 
     render() {
         
 
 
-    function handleSubmit() {
-      let product = {id, name, image, fixedPrice, orderParams}
-      addToCard(product);
-    } 
 
         
-       
-    const {addToCard,name,image,price,oldPrice, options, id} = this.props
-    const {fixedPrice} = this.state;
+  const {name,image,price,oldPrice, options, } = this.props
+    
+
   return (
     <div className={styles.product}>
         
@@ -82,7 +88,7 @@ class Product extends React.Component {
          <br/>
 
          <h4 id={this.props.id} className={styles.price}>Total cost: ${this.state.fixedPrice}</h4>
-         <Button variant='contained' color='secondary' style={{padding: 24+'px'}} className={styles.submit} onClick={e => handleSubmit()} type='submit'>Add to cart!</Button>
+         <Button variant='contained' color='secondary' style={{padding: 24+'px'}} className={styles.submit} onClick={e => this.handleSubmit()} type='submit'>Add to cart!</Button>
 
     </div>
     </div>

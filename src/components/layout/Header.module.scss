@@ -19,15 +19,16 @@
 }
 
 .header {
-
+	width: 80%;
 	margin: 12px;
 	position: absolute;
 	top: 50%;
-	left: 40%;
+	left: 50%;
 	transform: translate(-50%,-50%);
 }
 
 .title {
+	letter-spacing: 4px;
 	font-family: $font-header;
 	text-align: left;
 	font-size: 72px;
@@ -45,8 +46,26 @@
 	
 }
 
+.link {
+	font-size: 24px;
+	color: $color-one;
+	padding: 12px 24px;
+	background-color: #3b5998;
+	text-decoration: none;
+	transition: $transition;
+}
 
-@media(max-width: 720px) {
+.link:hover {
+	background-color: $color-one;
+	color: #3b5998;
+}
+@media(max-width: 1067px) {	
+	.link {
+		font-size: 12px;
+	}
+}
+
+@media(max-width: 767px) {
 
 	.background {
 		background-image: url(../../images/header_mobile.jpg);
@@ -60,5 +79,9 @@
 		font-size: 24px;
 	}
 
+	.link {
+		padding: 6px 12px;
+		font-size: 6px;
+	}
 }
 }

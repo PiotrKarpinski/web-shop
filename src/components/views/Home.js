@@ -15,6 +15,7 @@ class Home extends React.Component {
 
     return (
       <section className={styles.component}>
+      <h2 className={styles.title}>Menu</h2>
             <div className={styles.list}>
               {this.props.products.map(p => <Product id={p.id} key={p.id} image={p.imageUrl} name={p.name} price={p.price} oldPrice={p.oldPrice} options={p.options}/>)}
              </div> 

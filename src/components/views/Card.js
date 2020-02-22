@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom';
 import CardItem from './CardItem';
-import Grid from '@material-ui/core/Grid';
-
 
 
 class Card extends React.Component {
@@ -15,21 +13,25 @@ class Card extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.validate = this.validate.bind(this)
-
+    this.updatePrice=this.updatePrice.bind(this)
     }
 
     componentDidMount() {
-  var price = document.getElementsByClassName('product-price');
   var total = 0;
-  for (var i = 0; i < price.length; i++) {
+  for (let i = 0; i < this.props.card.length; i++) {
       
-      total += parseFloat(price[i].innerHTML);
-      console.log(total)
+      total += parseFloat(this.props.card[i].fixedPrice);
   }
     this.setState({total: total.toFixed(2)})
 
 }
 
+  updatePrice(price) {
+
+    this.setState({total: (this.state.total - price).toFixed(2)})
+
+
+  }
 
     validate(mail) 
 {
@@ -42,7 +44,6 @@ class Card extends React.Component {
 
 
     handleChange(event) {
-     console.log(this.state)
       switch (event.target.name) {
   case 'email':
     this.validate(event.target.value)
@@ -111,7 +112,7 @@ const {card} = this.props
           <div className={styles.list}>
        
       {card.map((p, index )=> 
-           <CardItem key={index} name={p.name} price={p.fixedPrice} image={p.image} />
+           <CardItem updatePrice={this.updatePrice} key={index} id={index} name={p.name} price={p.fixedPrice} image={p.image} />
       )}
       </div>
       <h4 className={styles.totalPrice}>Total price: ${this.state.total}</h4>

@@ -36,6 +36,7 @@
 }
 
 .product {
+	cursor: pointer;
 	text-align: left;
 	min-width: 25vw;
 	font-family: $font-text;
@@ -76,6 +77,14 @@
 	width: 100%;
 	display: block;
 	font-size: 46px;
+}
+
+.trash {
+	margin: 12px auto;
+	margin-right: 2px; 
+	display: inline;
+	float: right;
+	position: relative;
 }
 
 

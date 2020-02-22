@@ -25,7 +25,7 @@ function PageNav() {
     </NavLink>
     </nav>
 
-  )};
+  )}
 
 
 
